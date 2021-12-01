@@ -1,0 +1,15 @@
+{
+    "name": "computer/shop",
+    "authors": [
+        {
+            "name": "Mihail Korotaev",
+            "email": "mikeeeel@yanex.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
