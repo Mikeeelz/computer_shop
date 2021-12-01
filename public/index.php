@@ -2,6 +2,6 @@
 
 require_once '../vendor/autoload.php';
 
-$helloWorld = new \App\HelloWorld();
+$app = new \App\Application();
 
-$helloWorld->hello();
+$app->run();
