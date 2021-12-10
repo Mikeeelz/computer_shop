@@ -58,7 +58,35 @@ class IndexController
                 'description' => 'Здравствуйте, меня зовут Андрей. Помогу ваму собрать компьютер, установить Windows и антивирус.',
                 'image' => '/media/slider/serega.jpg',
             ],
-        ];
+            ];
+
+            $consultants = [
+                'Евгений' => '/media/consultants/ConsultantEvgeni.jpg',
+                'Владислав' => '/media/consultants/ConsultantVlad.jpg',
+                'Максим' => '/media/consultants/ConsultantMaksim.jpg',
+            ];
+
+            $servise = [
+                'Связаться с нами',
+                'Статус заказа',
+                'Изменить местоположение',
+                'Часто задаваемые вопросы',
+            ];
+
+            $policies = [
+                'Условия эксплуатации',
+                'Политика конфиденциальности',
+                'Политика возврата',
+            ];
+
+            $about_shopper = [
+                'Информация о компании',
+                'Карьера',
+                'Расположение магазина',
+                'Партнёрская программа',
+            ];
+
+
 
         require_once __DIR__ . '/../../templates/index.php';
     }
