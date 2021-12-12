@@ -71,7 +71,7 @@
                             <ul class="nav nav-pills nav-stacked">
                                 <?php foreach ($brands as $brand) { ?>
                                     <li>
-                                        <a href="#"><?= $brand ?></a>
+                                        <a href="#"><?= $brand['title'] ?></a>
                                     </li>
                                 <?php } ?>
                             </ul>
