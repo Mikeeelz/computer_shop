@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Model\Brand;
+use App\Model\Category;
+use App\Model\Banner;
 
 class IndexController
 {
@@ -10,16 +12,7 @@ class IndexController
     {
         $brands = Brand::findAll();
 
-        $categories = [
-            'Материнские платы',
-            'Процессоры',
-            'Видеокарты',
-            'Оперативная память',
-            'Наушники',
-            'Клавиатуры',
-            'Игровые мыши',
-            'Блоки питания',
-        ];
+        $categories = Category::findAll();
 
         $products = [
             [
@@ -29,26 +22,7 @@ class IndexController
             ],
         ];
 
-        $banners = [
-            [
-                'title' => 'СКИДКА <span>30%</span>',
-                'subtitle' => 'Скидки на видеокарты',
-                'description' => 'Успей купить видеокарты со скидками до 21.10.2021',
-                'image' => '/media/slider/slider1.jpg',
-            ],
-            [
-                'title' => 'СКОРО В ПРОДАЖЕ',
-                'subtitle' => 'Водяное охлаждение',
-                'description' => 'В продаже с 28.10.2021',
-                'image' => '/media/slider/slider2.jpg',
-            ],
-            [
-                'title' => 'Компьютерный мастер Андрей',
-                'subtitle' => null,
-                'description' => 'Здравствуйте, меня зовут Андрей. Помогу ваму собрать компьютер, установить Windows и антивирус.',
-                'image' => '/media/slider/serega.jpg',
-            ],
-        ];
+        $banners = Banner::findAll();
 
         $consultants = [
             'Евгений' => '/media/consultants/ConsultantEvgeni.jpg',

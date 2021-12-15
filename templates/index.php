@@ -59,7 +59,7 @@
                         <?php foreach ($categories as $category) { ?>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#"><?= $category ?></a></h4>
+                                    <h4 class="panel-title"><a href="#"><?= $category['title'] ?></a></h4>
                                 </div>
                             </div>
                         <?php } ?>
