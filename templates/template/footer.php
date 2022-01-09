@@ -9,15 +9,15 @@
                     </div>
                 </div>
                 <div class="col-sm-7">
-                    <?php foreach ($consultants as $name => $immage) { ?>
+                    <?php foreach ($consultants as $consultant) { ?>
                     <div class="col-sm-3">
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="<?= $immage ?>" alt="" />
+                                    <img src="<?= $consultant['image'] ?>" alt="" />
                                 </div>
                             </a>
-                            <p> <?= $name ?></p>
+                            <p> <?= $consultant['name'] ?></p>
                         </div>
                     </div>
                     <?php } ?>
@@ -38,32 +38,50 @@
                 <div class="col-sm-2">
                     <div class="single-widget">
                         <h2>Услуги</h2>
-                        <?php foreach ($servise as $serv ) { ?>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#"><?= $serv ?></a></li>
+                            <li><a href="#">'Связаться с нами'</a></li>
                         </ul>
-                        <?php } ?>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">'Статус заказа'</a></li>
+                        </ul>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">'Изменить местоположение'</a></li>
+                        </ul>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">'Часто задаваемые вопросы'</a></li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="col-sm-2">
                     <div class="single-widget">
                         <h2>Политика</h2>
-                        <?php foreach ($policies as $politic ) { ?>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#"><?= $politic ?></a></li>
+                            <li><a href="#">'Условия эксплуатации'</a></li>
                         </ul>
-                        <?php } ?>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">'Политика конфиденциальности'</a></li>
+                        </ul>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">'Политика возврата'</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-sm-2">
                     <div class="single-widget">
                         <h2>О магазине</h2>
-                        <?php foreach ($about_shopper as $shop ) { ?>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#"><?= $shop ?></a></li>
+                            <li><a href="#">'Информация о компании'</a></li>
                         </ul>
-                        <?php } ?>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">'Карьера'</a></li>
+                        </ul>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">'Расположение магазина'</a></li>
+                        </ul>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">'Партнёрская программа'</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-sm-3 col-sm-offset-1">
