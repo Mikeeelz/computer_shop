@@ -1,13 +1,18 @@
 <?php require_once 'template/template_header.php' ?>
 <section id="form">
     <div class="container">
+        <?php if (isset($_GET['success_register'])) { ?>
+            <div class="row text-center">
+                Вы успешно зарегистрированы
+            </div>
+        <?php } ?>
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form">
                     <h2>Авторизация</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Имя" />
-                        <input type="email" placeholder="Почта" />
+                    <form action="/auth" method="post">
+                        <input type="email" placeholder="Почта" name="email" required/>
+                        <input type="password" placeholder="Пароль" name="password" required/>
                         <button type="submit" class="btn btn-default">Войти</button>
                     </form>
                 </div>
