@@ -36,16 +36,25 @@ class AuthController
         $user = User::findByEmail($email);
 
         if ($user === null) {
-            echo 'user is null';
+            header('Location: http://localhost/login?error_auth=1');
             return;
         }
 
         if (!$user->checkPassword($password)) {
-            echo 'password invalid';
+            header('Location: http://localhost/login?error_auth=1');
             return;
         }
 
-        echo 'ok';
+        $user->login();
+
+        header('Location: http://localhost');
+    }
+
+    public function logout(): void
+    {
+        User::logout();
+
+        header('Location: http://localhost');
     }
 }
 

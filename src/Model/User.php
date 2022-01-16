@@ -59,4 +59,45 @@ class User
     {
         return $this->password === md5($password);
     }
+
+    public function login(): void
+    {
+        $_SESSION['user_id'] = $this->id;
+    }
+
+    public static function logout(): void
+    {
+        unset($_SESSION['user_id']);
+    }
+
+    public static function getAuthUser(): ?User
+    {
+        if (!isset($_SESSION['user_id'])) {
+            return null;
+        }
+
+        $sql = 'select id, name, email, password from user where id = :id';
+        $connection = DB::getConnection();
+        $query = $connection->prepare($sql);
+        $query->bindParam('id', $_SESSION['user_id']);
+        $query->execute();
+
+        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+
+        if (empty($result)) {
+            return null;
+        }
+
+        $userData = $result[0];
+        $user= new User($userData['name'], $userData['email']);
+        $user->id = $userData['id'];
+        $user->password = $userData['password'];
+
+        return $user;
+    }
+
+    public static function isAuthorized(): bool
+    {
+        return User::getAuthUser() !== null;
+    }
 }

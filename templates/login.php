@@ -6,6 +6,11 @@
                 Вы успешно зарегистрированы
             </div>
         <?php } ?>
+        <?php if (isset($_GET['error_auth'])) { ?>
+            <div class="row text-center">
+                Неправельная почта или пароль
+            </div>
+        <?php } ?>
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form">
