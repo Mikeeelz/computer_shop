@@ -1,0 +1,8 @@
+{% set title = 'Список страниц' %}
+
+{% include 'admin/list-template.html.twig' with {
+  link: 'app.admin.content.page.list',
+  head_template: 'admin/content/page/list-head.html.twig',
+  item_template: 'admin/content/page/list-item.html.twig',
+  create_link: 'app.admin.content.page.create',
+} %}

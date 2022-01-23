@@ -1,0 +1,10 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% set title = 'Добавление тега' %}
+{% set back_link = 'app.admin.content.tag.list' %}
+
+{% block content %}
+  {% include 'admin/content/tag/form.html.twig' with {
+    url: path('app.admin.content.tag.save'),
+  } %}
+{% endblock %}

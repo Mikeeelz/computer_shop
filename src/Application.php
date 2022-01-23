@@ -21,7 +21,7 @@ class Application
     private function handlePattern(string $pattern, string $uri, string $page): bool
     {
         $match = null;
-        preg_match("~$pattern~", $uri, $match);
+        preg_match("~$pattern~", strtolower($uri), $match);
 
         if (empty($match)) {
             return false;

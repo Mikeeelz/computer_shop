@@ -1,0 +1,8 @@
+{% set title = 'Список разделов FAQ' %}
+
+{% include 'admin/list-template.html.twig' with {
+  link: 'app.admin.content.faq-category.list',
+  head_template: 'admin/content/faq-category/list-head.html.twig',
+  item_template: 'admin/content/faq-category/list-item.html.twig',
+  create_link: 'app.admin.content.faq-category.create',
+} %}

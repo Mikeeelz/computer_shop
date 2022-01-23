@@ -8,7 +8,8 @@
     ],
     "require": {
         "symfony/var-dumper": "^6.0",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "twig/twig": "^3.3"
     },
     "autoload": {
         "psr-4": {

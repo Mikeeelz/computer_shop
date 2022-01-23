@@ -1,0 +1,10 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% set title = 'Редактирование раздела FAQ: ' ~ faqCategory.title %}
+{% set back_link = 'app.admin.content.faq-category.list' %}
+
+{% block content %}
+  {% include 'admin/content/faq-category/form.html.twig' with {
+    url: path('app.admin.content.faq-category.update', {faqCategory: faqCategory.id}),
+  } %}
+{% endblock %}

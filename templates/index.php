@@ -1,4 +1,6 @@
-<?php require_once 'template/template_header.php' ?>
+<?php use App\Model\Brand;
+
+require_once 'template/template_header.php' ?>
 
 <?php
 /**
@@ -15,7 +17,7 @@
             <div class="col-sm-12">
                 <div id="slider-carousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <?php foreach ($banners as $key => $banner) { ?>
+                        <?php foreach (Brand::findAll() as $key => $banner) { ?>
                             <li data-target="#slider-carousel" data-slide-to="0"
                                 class="<?= $key === 0 ? 'active' : '' ?>"></li>
                         <?php } ?>

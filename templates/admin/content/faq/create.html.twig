@@ -1,0 +1,10 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% set title = 'Добавление FAQ' %}
+{% set back_link = 'app.admin.content.faq.list' %}
+
+{% block content %}
+  {% include 'admin/content/faq/form.html.twig' with {
+    url: path('app.admin.content.faq.save'),
+  } %}
+{% endblock %}

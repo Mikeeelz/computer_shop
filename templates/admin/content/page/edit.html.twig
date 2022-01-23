@@ -1,0 +1,10 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% set title = 'Редактирование страницы: ' ~ page.title %}
+{% set back_link = 'app.admin.content.page.list' %}
+
+{% block content %}
+  {% include 'admin/content/page/form.html.twig' with {
+    url: path('app.admin.content.page.update', {page: page.id}),
+  } %}
+{% endblock %}

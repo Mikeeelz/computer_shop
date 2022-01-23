@@ -1,0 +1,8 @@
+{% set title = 'Список статей' %}
+
+{% include 'admin/list-template.html.twig' with {
+  link: 'app.admin.content.tag.list',
+  head_template: 'admin/content/tag/list-head.html.twig',
+  item_template: 'admin/content/tag/list-item.html.twig',
+  create_link: 'app.admin.content.tag.create',
+} %}

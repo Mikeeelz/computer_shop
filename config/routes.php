@@ -7,5 +7,6 @@ return [
     '/auth' => '\App\Controller\AuthController:auth',
     '/logout' => '\App\Controller\AuthController:logout',
     '/cart' => '\App\Controller\CartController:Cart',
+    '/admin' => '\App\Controller\Admin\AdminIndexController:index',
     '/' => '\App\Controller\IndexController:index',
 ];
