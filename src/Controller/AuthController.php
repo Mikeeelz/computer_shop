@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\DB;
 use App\Model\Consultant;
 use App\Model\User;
 

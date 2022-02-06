@@ -6,7 +6,7 @@ return [
     '/register' => '\App\Controller\AuthController:register',
     '/auth' => '\App\Controller\AuthController:auth',
     '/logout' => '\App\Controller\AuthController:logout',
-    '/cart' => '\App\Controller\CartController:Cart',
+    '/cart' => '\App\Controller\CartController:cart',
     '/admin' => '\App\Controller\Admin\AdminIndexController:index',
     '/' => '\App\Controller\IndexController:index',
 ];

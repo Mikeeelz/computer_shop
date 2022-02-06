@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use App\Twig;
+
 class CartController
 {
-    public function Cart(): void
+    public function cart(): void
     {
-        require_once __DIR__ . '/../../templates/cart.php';
+        Twig::render('cart.html.twig');
     }
 }
