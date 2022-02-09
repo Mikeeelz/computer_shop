@@ -4,28 +4,14 @@
       <form action="{{ url }}" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label class="control-label required" for="title">
-            Заголовок
+            Название
           </label>
           <input type="text"
                  id="title"
                  name="title"
                  required="required"
                  class=" form-control"
-                 value="{{ tag.title }}"
-          >
-        </div>
-
-        <div class="form-group">
-          <label class="control-label required" for="slug">
-            Код
-          </label>
-          <input
-                  type="text"
-                  id="slug"
-                  name="slug"
-                  required="required"
-                  class=" form-control"
-                  value="{{ tag.slug }}"
+                 value="{{ category.title }}"
           >
         </div>
 

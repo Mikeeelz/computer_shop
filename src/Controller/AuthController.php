@@ -2,16 +2,14 @@
 
 namespace App\Controller;
 
-use App\Model\Consultant;
 use App\Model\User;
+use App\Twig;
 
 class AuthController
 {
     public function index(): void
     {
-        $consultants = Consultant::findAll();
-
-        require_once __DIR__ . '/../../templates/login.php';
+        Twig::render('login.html.twig');
     }
 
     public function register(): void

@@ -31,7 +31,7 @@ class Application
 
         $controller = new $parts[0];
 
-        $controller->{$parts[1]}();
+        $controller->{$parts[1]}(count($match) > 1 ? (int)$match[1] : null);
 
         return true;
     }

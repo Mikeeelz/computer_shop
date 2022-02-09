@@ -20,6 +20,8 @@ class Twig
         $loader = new FilesystemLoader(__DIR__ . '/../templates');
         $twig = new Environment($loader);
 
+        $twig->addGlobal('get', $_GET);
+
         $twig->addFunction(new TwigFunction('getConsultants', function (): array {
             return Consultant::findAll();
         }));

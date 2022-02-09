@@ -14,8 +14,6 @@ class AdminIndexController
             return;
         }
 
-        $twig = Twig::get();
-        $html = $twig->render('admin/index.html.twig');
-        echo $html;
+        Twig::render('admin/index.html.twig') ;
     }
 }
