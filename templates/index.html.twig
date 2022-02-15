@@ -63,7 +63,7 @@
                 <ul class="nav nav-pills nav-stacked">
                   {% for brand in brands %}
                     <li>
-                      <a href="#">{{ brand['title'] }}</a>
+                      <a href="#">{{ brand.title }}</a>
                     </li>
                   {% endfor %}
                 </ul>
@@ -82,8 +82,8 @@
                   <div class="single-products">
                     <div class="productinfo text-center">
                       <img src="{{ product['image'] }}" alt=""/>
-                      <h2>{{ product['price']|number_format(0, '', ' ') }} руб.</h2>
-                      <p>{{ product['title'] }}</p>
+                      <h2>{{ product.price|number_format(0, '', ' ') }} руб.</h2>
+                      <p>{{ product.title }}</p>
                       <a href="#" class="btn btn-default add-to-cart">
                         <i class="fa fa-shopping-cart"></i>
                         В корзину

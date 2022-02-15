@@ -1,0 +1,11 @@
+<tr>
+  <td>{{ item.id }}</td>
+  <td>{{ item.title }}</td>
+  <td>{{ item.price }}</td>
+  <td>
+    <a href="{{ '/admin/product/edit/' ~ item.id }}" class="btn btn-sm btn-default edit_link">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+      Редактировать
+    </a>
+  </td>
+</tr>
