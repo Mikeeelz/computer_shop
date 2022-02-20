@@ -14,6 +14,7 @@
                  value="{{ product.title }}"
           >
         </div>
+
         <div class="form-group">
           <label class="control-label required" for="price">
             Цена
@@ -25,6 +26,33 @@
                  class=" form-control"
                  value="{{ product.price }}"
           >
+        </div>
+
+        <div class="form-group">
+          <label class="control-label required" for="price">
+            Изображение
+          </label>
+          {% if product.image is not empty %}
+            <img src="{{ product.image }}" width="400"/>
+          {% endif %}
+          <input type="file"
+                 id="image"
+                 name="image"
+                 class=" form-control"
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="control-label required" for="categoryId">
+            Категория
+          </label>
+          <select class="form-control" id="categoryId" name="categoryId">
+            {% for category in categories %}
+              <option value="{{ category.id }}" {{ product.categoryId == category.id ? 'selected' : '' }}>
+                {{ category.title }}
+              </option>
+            {% endfor %}
+          </select>
         </div>
 
         <button type="submit" class="btn btn-success">Сохранить</button>
