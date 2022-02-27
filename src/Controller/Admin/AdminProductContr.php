@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Model\Brand;
 use App\Model\Category;
 use App\Model\Product;
 use App\Twig;
@@ -19,6 +20,7 @@ class AdminProductContr
     {
         Twig::render('admin/catalog/product/create.html.twig', [
             'categories' => Category::findAll(),
+            'brands' => Brand::findAll(),
         ]);
     }
 
@@ -26,6 +28,7 @@ class AdminProductContr
     {
         $product = new Product($_POST['title'], $_POST['price'], $this->saveImage());
         $product->categoryId = $_POST['categoryId'];
+        $product->brandId = $_POST['brandId'];
         $product->save();
 
         header('Location: http://localhost/admin/product');
@@ -36,6 +39,7 @@ class AdminProductContr
         Twig::render('admin/catalog/product/edit.html.twig', [
             'product' => Product::findById($id),
             'categories' => Category::findAll(),
+            'brands' => Brand::findAll(),
         ]);
     }
 
@@ -45,7 +49,7 @@ class AdminProductContr
         $product->title = $_POST['title'];
         $product->price = (int)$_POST['price'];
         $product->categoryId = (int)$_POST['categoryId'];
-
+        $product->brandId = (int)$_POST['brandId'];
         $image = $this->saveImage();
 
         if ($image !== null) {

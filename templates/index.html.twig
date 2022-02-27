@@ -46,29 +46,8 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="left-sidebar">
-            <h2>Категории</h2>
-            <div class="panel-group category-products" id="accordian">
-              {% for category in categories %}
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><a href="#">{{ category.title }}</a></h4>
-                  </div>
-                </div>
-              {% endfor %}
-            </div>
-
-            <div class="brands_products">
-              <h2>Производители</h2>
-              <div class="brands-name">
-                <ul class="nav nav-pills nav-stacked">
-                  {% for brand in brands %}
-                    <li>
-                      <a href="#">{{ brand.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
+            {% include 'block/category-list.html.twig' %}
+            {% include 'block/brand-list.html.twig' %}
           </div>
         </div>
 
@@ -76,22 +55,7 @@
           <div class="features_items">
             <h2 class="title text-center">Новые товары</h2>
             {% for product in products %}
-              <?php foreach ($products as $product) { ?>
-              <div class="col-sm-4">
-                <div class="product-image-wrapper">
-                  <div class="single-products">
-                    <div class="productinfo text-center">
-                      <img src="{{ product.image }}" alt=""/>
-                      <h2>{{ product.price|number_format(0, '', ' ') }} руб.</h2>
-                      <p>{{ product.title }}</p>
-                      <a href="#" class="btn btn-default add-to-cart">
-                        <i class="fa fa-shopping-cart"></i>
-                        В корзину
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {% include 'block/product.html.twig' %}
             {% endfor %}
           </div>
         </div>
