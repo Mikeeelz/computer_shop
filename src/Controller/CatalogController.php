@@ -14,10 +14,19 @@ class CatalogController
     {
         Twig::render('category.html.twig', [
             'category' => Category::findById($id),
-            'banners' => Banner::findAll(),
             'categories' => Category::findAll(),
             'brands' => Brand::findAll(),
             'products' => Product::findByCategoryId($id),
+        ]);
+    }
+
+    public function brand(int $id): void
+    {
+        Twig::render('brand.html.twig', [
+            'brand' => Brand::findById($id),
+            'categories' => Category::findAll(),
+            'brands' => Brand::findAll(),
+            'products' => Product::findByBrandId($id),
         ]);
     }
 }

@@ -76,6 +76,25 @@ class Product
         return $result;
     }
 
+    public static function findByBrandId(int $brandId): array
+    {
+        $connection = DB::getConnection();
+
+        $query = $connection->prepare('select * from product where brand_id = :brand_id');
+        $query->bindParam('brand_id', $brandId);
+        $query->execute();
+
+        $result = [];
+
+        foreach ($query->fetchAll(\PDO::FETCH_ASSOC) as $product) {
+            $item = new Product($product['title'], $product['price'], $product['image'], $product['id']);
+            $item->categoryId = $product['category_id'];
+            $item->brandId = $product['brand_id'];
+            $result[] = $item;
+        }
+        return $result;
+    }
+
     public function save(): void
     {
         if ($this->id === null) {

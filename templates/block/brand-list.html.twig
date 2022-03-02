@@ -4,7 +4,7 @@
     <ul class="nav nav-pills nav-stacked">
       {% for brand in brands %}
         <li>
-          <a href="#">{{ brand.title }}</a>
+          <a href="/brand/{{ brand.id }}">{{ brand.title }}</a>
         </li>
       {% endfor %}
     </ul>
