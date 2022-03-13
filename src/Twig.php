@@ -30,6 +30,15 @@ class Twig
             return User::isAuthorized();
         }));
 
+        $twig->addFunction(new TwigFunction('getCartCount', function (): int {
+            $sum = 0;
+            foreach ($_SESSION['cart'] as $count) {
+                $sum += $count;
+            }
+
+            return $sum;
+        }));
+
         return $twig;
     }
 }

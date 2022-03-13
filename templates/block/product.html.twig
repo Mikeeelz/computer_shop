@@ -5,10 +5,10 @@
         <img src="{{ product.image }}" alt=""/>
         <h2>{{ product.price|number_format(0, '', ' ') }} руб.</h2>
         <p>{{ product.title }}</p>
-        <a href="#" class="btn btn-default add-to-cart">
+        <button class="btn btn-default add-to-cart" data-product-id="{{ product.id }}">
           <i class="fa fa-shopping-cart"></i>
           В корзину
-        </a>
+        </button>
       </div>
     </div>
   </div>
