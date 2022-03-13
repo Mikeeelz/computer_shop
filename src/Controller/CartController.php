@@ -2,13 +2,22 @@
 
 namespace App\Controller;
 
+use App\Model\Product;
 use App\Twig;
 
 class CartController
 {
     public function index(): void
     {
-        Twig::render('cart.html.twig');
+        $items = [];
+        foreach ($_SESSION['cart'] as $productId => $count) {
+            $items[] = [
+                'product' => Product::findById($productId),
+                'count' => $count,
+            ];
+        }
+
+        Twig::render('cart.html.twig', ['items' => $items]);
     }
 
     public function add(int $id): void
@@ -30,5 +39,12 @@ class CartController
 
         header('Content-Type: application/json');
         echo json_encode($response);
+    }
+
+    public function remove(int $id): void
+    {
+        unset($_SESSION['cart'][$id]);
+
+        header('Location: http://localhost/cart');
     }
 }

@@ -7,6 +7,7 @@ return [
     '/auth' => '\App\Controller\AuthController:auth',
     '/logout' => '\App\Controller\AuthController:logout',
     '/cart/add/([0-9]+)' => '\App\Controller\CartController:add',
+    '/cart/remove/([0-9]+)' => '\App\Controller\CartController:remove',
     '/cart' => '\App\Controller\CartController:index',
     '/category/([0-9]+)' => '\App\Controller\CatalogController:category',
     '/brand/([0-9]+)' => '\App\Controller\CatalogController:brand',
