@@ -32,10 +32,13 @@ class Twig
 
         $twig->addFunction(new TwigFunction('getCartCount', function (): int {
             $sum = 0;
-            foreach ($_SESSION['cart'] as $count) {
-                $sum += $count;
-            }
-
+            if (isset($_SESSION['cart'])){
+                foreach ($_SESSION['cart'] as $count) {
+                    $sum += $count;
+                }
+            } else {
+                    return 0;
+                }
             return $sum;
         }));
 

@@ -47,4 +47,18 @@ class CartController
 
         header('Location: http://localhost/cart');
     }
+
+    public function increase(int $id): void
+    {
+        $_SESSION['cart'][$id]++;
+
+        header('Location: http://localhost/cart');
+    }
+
+    public function reduce(int $id): void
+    {
+        $_SESSION['cart'][$id]--;
+
+        header('Location: http://localhost/cart');
+    }
 }
