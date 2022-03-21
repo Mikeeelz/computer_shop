@@ -12,3 +12,17 @@ const handler = (button) => {
 }
 
 buttons.forEach(handler)
+
+// const increases = document.querySelectorAll('.cart_quantity_up')
+//
+// const handler = (increase) => {
+//     increase.onclick = () => {
+//         $.ajax({
+//             'url': '/cart/increase/' + increase.dataset.productId
+//         }).then((response) => {
+//             counter.innerHTML = response.productId
+//         })
+//     }
+// }
+//
+// increase.forEach(handler)

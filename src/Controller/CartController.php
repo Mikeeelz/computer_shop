@@ -9,15 +9,21 @@ class CartController
 {
     public function index(): void
     {
+        $price = 0;
         $items = [];
         foreach ($_SESSION['cart'] as $productId => $count) {
+            $product = Product::findById($productId);
             $items[] = [
-                'product' => Product::findById($productId),
+                'product' => $product,
                 'count' => $count,
             ];
+            $price += $product->price * $count;
         }
 
-        Twig::render('cart.html.twig', ['items' => $items]);
+        Twig::render('cart.html.twig', [
+            'items' => $items,
+            'price' => $price,
+        ]);
     }
 
     public function add(int $id): void
