@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+use App\DB;
+use App\Model\Order;
+use App\Model\OrderItem;
+use App\Model\User;
 use App\Model\Product;
 use App\Twig;
 
@@ -66,5 +70,26 @@ class CartController
         $_SESSION['cart'][$id]--;
 
         header('Location: http://localhost/cart');
+    }
+
+    public function create(): void
+    {
+        $user = User::getAuthUser();
+        if ($user === null) {
+            $user = new User($_POST['name'], $_POST['email']);
+            $user->setPassword(rand(0, 1000));
+            $user->save();
+        }
+
+        $order = new Order($user->id, $_POST['address']);
+        $order->save();
+
+        foreach ($_SESSION['cart'] as $productId => $count) {
+            $product = Product::findById($productId);
+            $orderItem = new OrderItem($order->id, $productId, $product->price, $count);
+            $orderItem->save();
+        }
+
+        header('Location: http://localhost');
     }
 }

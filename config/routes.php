@@ -11,6 +11,7 @@ return [
     '/cart/reduce/([0-9]+)' => '\App\Controller\CartController:reduce',
     '/cart/remove/([0-9]+)' => '\App\Controller\CartController:remove',
     '/cart' => '\App\Controller\CartController:index',
+    '/order/create' => '\App\Controller\CartController:create',
     '/category/([0-9]+)' => '\App\Controller\CatalogController:category',
     '/brand/([0-9]+)' => '\App\Controller\CatalogController:brand',
     '/admin/product/edit/([0-9]+)' => '\App\Controller\Admin\AdminProductContr:edit',

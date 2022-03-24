@@ -31,6 +31,7 @@ class User
         $query->bindParam('email', $this->email);
         $query->bindParam('password', $this->password);
         $query->execute();
+        $this->id = $connection->lastInsertId();
     }
 
     public static function findByEmail(string $email): ?User
