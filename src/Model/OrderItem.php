@@ -26,4 +26,19 @@ class OrderItem
         $query->bindParam('count', $this->count);
         $query->execute();
     }
+
+    public static function findAll(): array
+    {
+        $connection = DB::getConnection();
+
+        $query = $connection->query('select * from order_item');
+
+        $result = [];
+
+        foreach ($query->fetchAll(\PDO::FETCH_ASSOC) as $order) {
+            $item = new OrderItem($order['order_id'], $order['product_id'], $order['price'], $order['count']);
+            $result[] = $item;
+        }
+        return $result;
+    }
 }

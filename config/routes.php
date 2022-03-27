@@ -14,6 +14,7 @@ return [
     '/order/create' => '\App\Controller\CartController:create',
     '/category/([0-9]+)' => '\App\Controller\CatalogController:category',
     '/brand/([0-9]+)' => '\App\Controller\CatalogController:brand',
+    '/admin/order' => '\App\Controller\Admin\AdminOrderController:index',
     '/admin/product/edit/([0-9]+)' => '\App\Controller\Admin\AdminProductContr:edit',
     '/admin/product/update/([0-9]+)' => '\App\Controller\Admin\AdminProductContr:update',
     '/admin/product/create' => '\App\Controller\Admin\AdminProductContr:create',
